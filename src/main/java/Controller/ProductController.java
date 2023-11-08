@@ -5,10 +5,7 @@ import Entity.Warehouse;
 import Interface.Communciate;
 import Service.Service;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -17,8 +14,8 @@ public class ProductController {
     private final Communciate communciate;
     private final Service service;
     @PostMapping("/AddProduct")
-    public String addProduct(Product product) throws Exception {
-        Warehouse warehouse = communciate.check(product);
+    public String addProduct(@RequestBody Product product) {
+        Warehouse warehouse = communciate.check(product.getWarehouseId());
         return service.addProduct(product,warehouse);
     }
 
