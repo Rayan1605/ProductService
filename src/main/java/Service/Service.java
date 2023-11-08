@@ -12,7 +12,7 @@ public class Service {
     Map<Integer,Product> products = new HashMap<>();
     public String addProduct(Product product, Warehouse warehouse){
 
-        if (warehouse.getCapacity() == 0){
+        if (warehouse.getCapacity() < product.getQuantity()){
             return "No space available to add Product";
         }
         products.put(product.getProductid(),product);
