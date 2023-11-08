@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface Communciate {
 
     @GetMapping("/check")
-     Warehouse check(int id);
+     Warehouse Check(int id);
 }

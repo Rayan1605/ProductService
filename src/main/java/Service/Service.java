@@ -8,7 +8,6 @@ import java.util.Map;
 
 @org.springframework.stereotype.Service
 public class Service {
-
     Map<Integer,Product> products = new HashMap<>();
     public String addProduct(Product product, Warehouse warehouse){
 
