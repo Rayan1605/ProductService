@@ -1,6 +1,6 @@
 package Service;
 
-import Product.Product;
+import Entity.Product;
 
 @org.springframework.stereotype.Service
 public class Service {
