@@ -15,7 +15,7 @@ public class ProductController {
     private final Service service;
     @PostMapping("/AddProduct")
     public String addProduct(@RequestBody Product product) {
-        Warehouse warehouse = communciate.check(product.getWarehouseId());
+        Warehouse warehouse = communciate.Check(product.getWarehouseId());
         return service.addProduct(product,warehouse);
     }
 
